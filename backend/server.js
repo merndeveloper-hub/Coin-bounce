@@ -3,8 +3,9 @@ const app = express();
 const dbConnect = require('./database/index');
 const {PORT}  = require('./config/index');
 
+const router = require('./routes/index');
 
-
+app.use(router);
 
 app.get('/', (req, res) => {
     res.json({msg: 'Hello World'})
